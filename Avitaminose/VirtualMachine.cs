@@ -8,6 +8,13 @@ namespace Avitaminose
 {
     class VirtualMachine
     {
-        
+        internal Stack Stack { get; set; }
+        internal CPU CPU { get; set; }
+
+        public VirtualMachine()
+        {
+            Stack = new Stack();
+            CPU = new CPU(this);
+        }
     }
 }
