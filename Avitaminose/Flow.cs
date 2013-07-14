@@ -20,14 +20,19 @@ namespace Avitaminose
 
 		private VirtualMachine _vm;
 
+		/**
+		 * Note that the flow's cursor is init'd at "-1". This is like SQL Cursors, so you can do "while(Step())"
+		 * You will not have to include a special case for the first element
+		 * This will make CurrentInstruction crash if you do not Step() beforehand
+		 */
 		public Flow(VirtualMachine targetVm)
 		{
 			_vm = targetVm;
 			Instructions = new List<Instruction>();
-			Position = 0;
+			Position = -1;
 		}
 
-		public Instruction getCurrentInstruction()
+		public Instruction CurrentInstruction()
 		{
 			return Instructions[Position];
 		}
