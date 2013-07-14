@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CPU.cs" />
+    <Compile Include="Flow.cs" />
+    <Compile Include="Instruction.cs" />
     <Compile Include="Stack.cs" />
     <Compile Include="Exceptions.cs" />
     <Compile Include="Tools\StringUtils.cs" />

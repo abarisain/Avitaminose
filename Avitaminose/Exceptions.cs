@@ -24,4 +24,8 @@ namespace Avitaminose.Exceptions
     class StackCastException : Exception
     {
     }
+
+    class IllegalJumpException : Exception
+    {
+    }
 }
