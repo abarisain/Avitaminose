@@ -30,4 +30,8 @@ namespace Avitaminose.Exceptions
 	class IllegalJumpException : Exception
 	{
 	}
+
+	class UnknownOpcodeException : Exception
+	{
+	}
 }
