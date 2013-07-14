@@ -16,7 +16,14 @@ namespace Avitaminose
 	class Flow
 	{
 		public IList<Instruction> Instructions { get; internal set; }
-		public int Position { get; internal set; }		
+		public int Position { get; internal set; }
+		public Instruction CurrentInstruction
+		{
+			get
+			{
+				return Instructions[Position];
+			}
+		}
 
 		private VirtualMachine _vm;
 
@@ -30,11 +37,6 @@ namespace Avitaminose
 			_vm = targetVm;
 			Instructions = new List<Instruction>();
 			Position = -1;
-		}
-
-		public Instruction CurrentInstruction()
-		{
-			return Instructions[Position];
 		}
 
 		public bool CanStep()
