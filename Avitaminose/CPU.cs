@@ -89,87 +89,138 @@ namespace Avitaminose
 
 		public void Push()
 		{
-
+			_vm.Stack.Push(((ParametrizedInstruction) _currentInstruction).Parameter);
 		}
 
+		/// <summary>
+		/// Pops the top of the stack. Doesn't use the returned value.
+		/// </summary>
 		public void Pop()
 		{
-
+			_vm.Stack.Pop();
 		}
 
 		public void Add()
 		{
+			var a = _vm.Stack.Pop<int>();
+			var b = _vm.Stack.Pop<int>();
 
+			_vm.Stack.Push(a + b);
 		}
 
 		public void Sub()
 		{
+			var a = _vm.Stack.Pop<int>();
+			var b = _vm.Stack.Pop<int>();
 
+			_vm.Stack.Push(a - b);
 		}
 
 		public void Mul()
 		{
+			var a = _vm.Stack.Pop<int>();
+			var b = _vm.Stack.Pop<int>();
 
+			_vm.Stack.Push((int) (a * b));
 		}
 
 		public void Div()
 		{
+			var a = _vm.Stack.Pop<int>();
+			var b = _vm.Stack.Pop<int>();
 
+			_vm.Stack.Push((int) (b / a));
 		}
 
 		public void Print()
 		{
+			var a = _vm.Stack.Peek();
 
+			_vm.BIOS.print(a.ToString());
+		}
+
+		/// <summary>
+		/// Temporary, until escaped characters are printable
+		/// </summary>
+		public void Println()
+		{
+			var a = _vm.Stack.Peek();
+
+			_vm.BIOS.println(a.ToString());
 		}
 
 		public void And()
 		{
+			var a = _vm.Stack.Pop<int>();
+			var b = _vm.Stack.Pop<int>();
 
+			_vm.Stack.Push(b & a);
 		}
 
 		public void Or()
 		{
+			var a = _vm.Stack.Pop<int>();
+			var b = _vm.Stack.Pop<int>();
 
+			_vm.Stack.Push(b | a);
 		}
 
 		public void Xor()
 		{
+			var a = _vm.Stack.Pop<int>();
+			var b = _vm.Stack.Pop<int>();
 
+			_vm.Stack.Push(b ^ a);
 		}
 
 		public void Shl()
 		{
+			var a = _vm.Stack.Pop<int>();
+			var b = _vm.Stack.Pop<int>();
 
+			_vm.Stack.Push(b << a);
 		}
 
 		public void Shr()
 		{
+			var a = _vm.Stack.Pop<int>();
+			var b = _vm.Stack.Pop<int>();
 
+			_vm.Stack.Push(b >> a);
 		}
 
 		public void Cmp()
 		{
+			var a = _vm.Stack.Pop<int>();
+			var b = _vm.Stack.Pop<int>();
 
+			_vm.Stack.Push(b == a ? 1 : 0);
 		}
 
 		public void Jmp()
 		{
-
+			_vm.Flow.Jump((Label)((ParametrizedInstruction)_currentInstruction).Parameter);
 		}
 
 		public void Je()
 		{
-
+			var a = _vm.Stack.Pop<int>();
+			if (a == 1)
+				Jmp();
 		}
 
 		public void Jne()
 		{
-
+			var a = _vm.Stack.Pop<int>();
+			if (a == 0)
+				Jmp();
 		}
 
 		public void Dpl()
 		{
-
+			var a = _vm.Stack.Pop<int>();
+			_vm.Stack.Push(a);
+			_vm.Stack.Push(a);
 		}
 	}
 }

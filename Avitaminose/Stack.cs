@@ -22,9 +22,10 @@ namespace Avitaminose
 			Content = new Stack<Object>();
 		}
 
-		public void Push(String value)
+		public void Push(object value)
 		{
-			if (value.Length < 1)
+			/*Todo : move this in the assembler
+			 * if (value.Length < 1)
 			{
 				throw new AssemblyParsingException("Invalid push value");
 			}
@@ -38,7 +39,8 @@ namespace Avitaminose
 			{
 				// TODO : Parse more format numbers (see vitamine bug 11)
 				Content.Push(int.Parse(value));
-			}
+			}*/
+			Content.Push(value);
 		}
 
 		public Object Peek()
