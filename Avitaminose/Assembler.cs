@@ -72,7 +72,7 @@ namespace Avitaminose
 				// Split the string on the first space
 				var spaceIndex = line.IndexOf(' ');
 				var opcode = GetOpcodeForString(line.Substring(0, spaceIndex));
-				var parameter = line.Substring(spaceIndex);
+				var parameter = line.Substring(spaceIndex + 1);
 				object parsedParameter = null;
 
 				try

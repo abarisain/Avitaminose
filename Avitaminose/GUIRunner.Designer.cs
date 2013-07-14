@@ -31,17 +31,22 @@
 			this.textBoxInput = new System.Windows.Forms.TextBox();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.labelInput = new System.Windows.Forms.Label();
-			this.labelOutput = new System.Windows.Forms.Label();
-			this.textBoxAssembledProgram = new System.Windows.Forms.TextBox();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.RunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.label1 = new System.Windows.Forms.Label();
+			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+			this.labelOutput = new System.Windows.Forms.Label();
+			this.textBoxAssembledProgram = new System.Windows.Forms.TextBox();
 			this.textBoxOutput = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+			this.splitContainer2.Panel1.SuspendLayout();
+			this.splitContainer2.Panel2.SuspendLayout();
+			this.splitContainer2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// textBoxInput
@@ -63,6 +68,9 @@
 			// 
 			// splitContainer1
 			// 
+			this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.splitContainer1.Location = new System.Drawing.Point(0, 24);
 			this.splitContainer1.Margin = new System.Windows.Forms.Padding(0);
 			this.splitContainer1.Name = "splitContainer1";
@@ -75,10 +83,7 @@
 			// 
 			// splitContainer1.Panel2
 			// 
-			this.splitContainer1.Panel2.Controls.Add(this.textBoxOutput);
-			this.splitContainer1.Panel2.Controls.Add(this.label1);
-			this.splitContainer1.Panel2.Controls.Add(this.labelOutput);
-			this.splitContainer1.Panel2.Controls.Add(this.textBoxAssembledProgram);
+			this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
 			this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
 			this.splitContainer1.Size = new System.Drawing.Size(611, 357);
 			this.splitContainer1.SplitterDistance = 283;
@@ -92,31 +97,6 @@
 			this.labelInput.Size = new System.Drawing.Size(31, 13);
 			this.labelInput.TabIndex = 1;
 			this.labelInput.Text = "Input";
-			// 
-			// labelOutput
-			// 
-			this.labelOutput.AutoSize = true;
-			this.labelOutput.Location = new System.Drawing.Point(3, 4);
-			this.labelOutput.Name = "labelOutput";
-			this.labelOutput.Size = new System.Drawing.Size(99, 13);
-			this.labelOutput.TabIndex = 2;
-			this.labelOutput.Text = "Assembled program";
-			// 
-			// textBoxAssembledProgram
-			// 
-			this.textBoxAssembledProgram.AcceptsTab = true;
-			this.textBoxAssembledProgram.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxAssembledProgram.Location = new System.Drawing.Point(3, 23);
-			this.textBoxAssembledProgram.MaxLength = 0;
-			this.textBoxAssembledProgram.Multiline = true;
-			this.textBoxAssembledProgram.Name = "textBoxAssembledProgram";
-			this.textBoxAssembledProgram.ReadOnly = true;
-			this.textBoxAssembledProgram.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBoxAssembledProgram.Size = new System.Drawing.Size(318, 140);
-			this.textBoxAssembledProgram.TabIndex = 1;
-			this.textBoxAssembledProgram.WordWrap = false;
 			// 
 			// menuStrip1
 			// 
@@ -136,14 +116,52 @@
 			this.RunToolStripMenuItem.Text = "Run";
 			this.RunToolStripMenuItem.Click += new System.EventHandler(this.runToolStripMenuItem_Click);
 			// 
-			// label1
+			// splitContainer2
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(3, 166);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(39, 13);
-			this.label1.TabIndex = 3;
-			this.label1.Text = "Output";
+			this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.splitContainer2.Location = new System.Drawing.Point(-1, 0);
+			this.splitContainer2.Name = "splitContainer2";
+			this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+			// 
+			// splitContainer2.Panel1
+			// 
+			this.splitContainer2.Panel1.Controls.Add(this.labelOutput);
+			this.splitContainer2.Panel1.Controls.Add(this.textBoxAssembledProgram);
+			// 
+			// splitContainer2.Panel2
+			// 
+			this.splitContainer2.Panel2.Controls.Add(this.textBoxOutput);
+			this.splitContainer2.Panel2.Controls.Add(this.label1);
+			this.splitContainer2.Size = new System.Drawing.Size(325, 357);
+			this.splitContainer2.SplitterDistance = 178;
+			this.splitContainer2.TabIndex = 5;
+			// 
+			// labelOutput
+			// 
+			this.labelOutput.AutoSize = true;
+			this.labelOutput.Location = new System.Drawing.Point(0, 4);
+			this.labelOutput.Name = "labelOutput";
+			this.labelOutput.Size = new System.Drawing.Size(99, 13);
+			this.labelOutput.TabIndex = 6;
+			this.labelOutput.Text = "Assembled program";
+			// 
+			// textBoxAssembledProgram
+			// 
+			this.textBoxAssembledProgram.AcceptsTab = true;
+			this.textBoxAssembledProgram.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxAssembledProgram.Location = new System.Drawing.Point(0, 20);
+			this.textBoxAssembledProgram.MaxLength = 0;
+			this.textBoxAssembledProgram.Multiline = true;
+			this.textBoxAssembledProgram.Name = "textBoxAssembledProgram";
+			this.textBoxAssembledProgram.ReadOnly = true;
+			this.textBoxAssembledProgram.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.textBoxAssembledProgram.Size = new System.Drawing.Size(325, 155);
+			this.textBoxAssembledProgram.TabIndex = 5;
+			this.textBoxAssembledProgram.WordWrap = false;
 			// 
 			// textBoxOutput
 			// 
@@ -151,15 +169,24 @@
 			this.textBoxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxOutput.Location = new System.Drawing.Point(3, 182);
+			this.textBoxOutput.Location = new System.Drawing.Point(0, 19);
 			this.textBoxOutput.MaxLength = 0;
 			this.textBoxOutput.Multiline = true;
 			this.textBoxOutput.Name = "textBoxOutput";
 			this.textBoxOutput.ReadOnly = true;
 			this.textBoxOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBoxOutput.Size = new System.Drawing.Size(318, 172);
-			this.textBoxOutput.TabIndex = 4;
+			this.textBoxOutput.Size = new System.Drawing.Size(325, 156);
+			this.textBoxOutput.TabIndex = 8;
 			this.textBoxOutput.WordWrap = false;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(0, 3);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(39, 13);
+			this.label1.TabIndex = 7;
+			this.label1.Text = "Output";
 			// 
 			// GUIRunner
 			// 
@@ -175,11 +202,16 @@
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel1.PerformLayout();
 			this.splitContainer1.Panel2.ResumeLayout(false);
-			this.splitContainer1.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
+			this.splitContainer2.Panel1.ResumeLayout(false);
+			this.splitContainer2.Panel1.PerformLayout();
+			this.splitContainer2.Panel2.ResumeLayout(false);
+			this.splitContainer2.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+			this.splitContainer2.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -188,12 +220,13 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBoxInput;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TextBox textBoxAssembledProgram;
-        private System.Windows.Forms.Label labelInput;
-        private System.Windows.Forms.Label labelOutput;
+		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.Label labelInput;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem RunToolStripMenuItem;
+		private System.Windows.Forms.SplitContainer splitContainer2;
+		private System.Windows.Forms.Label labelOutput;
+		private System.Windows.Forms.TextBox textBoxAssembledProgram;
 		private System.Windows.Forms.TextBox textBoxOutput;
 		private System.Windows.Forms.Label label1;
     }
