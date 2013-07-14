@@ -12,7 +12,12 @@ namespace Avitaminose
 
 		public Instruction(Opcode opcode)
 		{
-			Opcode = opcode;
+			Opcode = opcode;			
+		}
+
+		public override string ToString()
+		{
+			return Opcode.ToString();
 		}
 	}
 
@@ -25,6 +30,20 @@ namespace Avitaminose
 		{
 			Parameter = parameter;
 		}
+
+		public override string ToString()
+		{
+			string value = null;
+			if (typeof(T) == typeof(int) || typeof(T) == typeof(string))
+			{
+				value = Parameter.ToString();
+			}
+			else
+			{
+				value = null;
+			}
+			return base.ToString() + " ";
+		}
 	}
 
 	class LabelInstruction : Instruction
@@ -35,6 +54,11 @@ namespace Avitaminose
 			: base(opcode)
 		{
 			Name = name;
+		}
+
+		public override string ToString()
+		{
+			return Name + ":";
 		}
 	}
 
