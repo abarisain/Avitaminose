@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Avitaminose
 {
-    class CPU
-    {
-        private VirtualMachine _vm;
+	class CPU
+	{
+		private VirtualMachine _vm;
 
-        public CPU(VirtualMachine targetVM)
-        {
-            _vm = targetVM;
-        }
+		public CPU(VirtualMachine targetVM)
+		{
+			_vm = targetVM;
+		}
 
-
-    }
+	}
 }

@@ -6,26 +6,28 @@ using System.Threading.Tasks;
 
 namespace Avitaminose.Exceptions
 {
-    class AssemblyParsingException : Exception
-    {
-        public AssemblyParsingException() : base()
-        {
-        }
+	class AssemblyParsingException : Exception
+	{
+		public AssemblyParsingException()
+			: base()
+		{
+		}
 
-        public AssemblyParsingException(string message) : base(message)
-        {
-        }
-    }
+		public AssemblyParsingException(string message)
+			: base(message)
+		{
+		}
+	}
 
-    class EmptyStackException : Exception
-    {
-    }
+	class EmptyStackException : Exception
+	{
+	}
 
-    class StackCastException : Exception
-    {
-    }
+	class StackCastException : Exception
+	{
+	}
 
-    class IllegalJumpException : Exception
-    {
-    }
+	class IllegalJumpException : Exception
+	{
+	}
 }
