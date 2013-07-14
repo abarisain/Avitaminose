@@ -50,8 +50,8 @@ namespace Avitaminose
 	{
 		public string Name { get; set; }
 
-		public LabelInstruction(Opcode opcode, String name)
-			: base(opcode)
+		public LabelInstruction(String name)
+			: base(Opcode.NOP)
 		{
 			Name = name;
 		}
