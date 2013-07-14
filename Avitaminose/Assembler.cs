@@ -59,7 +59,7 @@ namespace Avitaminose
 				{
 					// Create a new label, memorize its line, add it to the label list (for easy access) and add the instruction.
 					// The instruction is a NOP but is assembled for easier debugging
-					var label = new Label(line.Substring(0, line.Length - 1), _currentLineNumber);
+					var label = new Label(line.Substring(0, line.Length - 1).ToLower(), _currentLineNumber);
 					_labels.Add(label.Name, label);
 					return new LabelInstruction(label);
 				}
@@ -75,22 +75,42 @@ namespace Avitaminose
 				var parameter = line.Substring(spaceIndex + 1);
 				object parsedParameter = null;
 
-				try
+				// Check if we expect a label
+				if (opcode == Opcode.JMP || opcode == Opcode.JNE || opcode == Opcode.JMP)
 				{
-					// If the first char is ', then we have a string to parse, otherwise it's a number
-					if (parameter.First() == StringUtils.StringDelimiter)
+					Label outLabel;
+					if(_labels.TryGetValue(parameter.ToLower(), out outLabel))
 					{
-						parsedParameter = StringUtils.ParseAssemblyString(parameter);
+						parsedParameter = outLabel;
 					}
 					else
 					{
-						// TODO : Parse more format numbers (see vitamine bug 11)
-						parsedParameter = int.Parse(parameter);
+						throw new AssemblerException("Unkown label");
 					}
 				}
-				catch (Exception)
+				else if (opcode == Opcode.PUSH)
 				{
-					throw new AssemblerException("Error while parsing line parameter");
+					try
+					{
+						// If the first char is ', then we have a string to parse, otherwise it's a number
+						if (parameter.First() == StringUtils.StringDelimiter)
+						{
+							parsedParameter = StringUtils.ParseAssemblyString(parameter);
+						}
+						else
+						{
+							// TODO : Parse more format numbers (see vitamine bug 11)
+							parsedParameter = int.Parse(parameter);
+						}
+					}
+					catch (Exception)
+					{
+						throw new AssemblerException("Error while parsing line parameter");
+					}
+				}
+				else
+				{
+					throw new AssemblerException("Unexpected argument");
 				}
 
 				return new ParametrizedInstruction(opcode, parsedParameter);
