@@ -11,7 +11,12 @@ namespace AvitaminoseCLI
 	{
 		static void Main(string[] args)
 		{
-			System.IO.StreamReader programFile = new System.IO.StreamReader(args[1]);
+			if (args.Length < 1)
+			{
+				Console.WriteLine("Usage : Avitaminose path_to_code");
+				return;
+			}
+			System.IO.StreamReader programFile = new System.IO.StreamReader(args[0]);
 			string program = programFile.ReadToEnd();
 			programFile.Close();
 
