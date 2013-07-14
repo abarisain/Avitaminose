@@ -16,8 +16,7 @@ namespace Avitaminose
 	class Flow
 	{
 		public IList<Instruction> Instructions { get; internal set; }
-		public int Position { get; internal set; }
-		private bool jumpOccured;
+		public int Position { get; internal set; }		
 
 		private VirtualMachine _vm;
 
@@ -26,7 +25,6 @@ namespace Avitaminose
 			_vm = targetVm;
 			Instructions = new List<Instruction>();
 			Position = 0;
-			jumpOccured = false;
 		}
 
 		public Instruction getCurrentInstruction()
