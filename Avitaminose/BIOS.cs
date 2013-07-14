@@ -15,6 +15,7 @@ namespace Avitaminose
 	public class BasicBIOS : IBIOS
 	{
 		private StringBuilder _outputBuilder;
+		public bool AddNewlineAfterPrint = true; // For vitamine compatibility
 
 		public String output
 		{
@@ -31,7 +32,14 @@ namespace Avitaminose
 
 		public void print(string output)
 		{
-			_outputBuilder.Append(output);
+			if (AddNewlineAfterPrint)
+			{
+				_outputBuilder.AppendLn(output);
+			}
+			else
+			{
+				_outputBuilder.Append(output);
+			}				
 		}
 
 		public void println(string output)
