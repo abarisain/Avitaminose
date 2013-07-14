@@ -17,6 +17,11 @@ namespace Avitaminose
 			Name = name;
 			Line = line;
 		}
+
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 
 	class Flow
