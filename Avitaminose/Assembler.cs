@@ -57,10 +57,20 @@ namespace Avitaminose
 			{
 				if (line[line.Length - 1].Equals(':'))
 				{
-					// Create a new label, memorize its line, add it to the label list (for easy access) and add the instruction.
+					// Create a new label (or get the formward declaration), memorize its line, add it to the label list (for easy access) and add the instruction.
 					// The instruction is a NOP but is assembled for easier debugging
-					var label = new Label(line.Substring(0, line.Length - 1).ToLower(), _currentLineNumber);
-					_labels.Add(label.Name, label);
+					Label label;
+					var labelName = line.Substring(0, line.Length - 1).ToLower();
+					if (_labels.TryGetValue(labelName, out label))
+					{
+						label.Line = _currentLineNumber;
+					}
+					else
+					{
+						label = new Label(labelName, _currentLineNumber);
+						_labels.Add(label.Name, label);
+					}
+										
 					return new LabelInstruction(label);
 				}
 
@@ -79,13 +89,17 @@ namespace Avitaminose
 				if (opcode == Opcode.JMP || opcode == Opcode.JNE || opcode == Opcode.JMP)
 				{
 					Label outLabel;
-					if(_labels.TryGetValue(parameter.ToLower(), out outLabel))
+					var labelName = parameter.ToLower();
+					if(_labels.TryGetValue(labelName, out outLabel))
 					{
 						parsedParameter = outLabel;
 					}
 					else
 					{
-						throw new AssemblerException("Unkown label");
+						// Forward declaration of a label
+						outLabel = new Label(labelName, -1);
+						parsedParameter = outLabel;
+						_labels.Add(labelName, outLabel);
 					}
 				}
 				else if (opcode == Opcode.PUSH)
@@ -124,6 +138,15 @@ namespace Avitaminose
 			if (assembledInstruction != null)
 			{
 				_flow.Instructions.Add(assembledInstruction);
+			}
+		}
+
+		public void Finish()
+		{
+			foreach (Label label in _labels.Values)
+			{
+				if(label.Line < 0)
+					throw new AssemblerException("Unknown label '" + label.Name + "'");
 			}
 		}
 	}

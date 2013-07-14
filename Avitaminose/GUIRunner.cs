@@ -40,6 +40,7 @@ namespace Avitaminose
 			{
 				assembler.AddLineToFlow(assembler.AssembleLine(line));
 			}
+			assembler.Finish();
 
 			var assembledPrg = new StringBuilder();
 			foreach (Instruction instruction in vm.Flow.Instructions)
