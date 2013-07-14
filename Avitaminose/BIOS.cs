@@ -34,7 +34,7 @@ namespace Avitaminose
 		{
 			if (AddNewlineAfterPrint)
 			{
-				_outputBuilder.AppendLn(output);
+				_outputBuilder.AppendLine(output);
 			}
 			else
 			{
