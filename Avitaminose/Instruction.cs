@@ -21,11 +21,11 @@ namespace Avitaminose
 		}
 	}
 
-	class ParametrizedInstruction<T> : Instruction
+	class ParametrizedInstruction : Instruction
 	{
-		public T Parameter { get; set; }
+		public object Parameter { get; set; }
 
-		public ParametrizedInstruction(Opcode opcode, T parameter)
+		public ParametrizedInstruction(Opcode opcode, object parameter)
 			: base(opcode)
 		{
 			Parameter = parameter;
@@ -33,16 +33,7 @@ namespace Avitaminose
 
 		public override string ToString()
 		{
-			string value = null;
-			if (typeof(T) == typeof(int) || typeof(T) == typeof(string))
-			{
-				value = Parameter.ToString();
-			}
-			else
-			{
-				value = null;
-			}
-			return base.ToString() + " ";
+			return base.ToString() + " " + Parameter.ToString();
 		}
 	}
 
