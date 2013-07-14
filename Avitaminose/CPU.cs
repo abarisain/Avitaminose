@@ -50,6 +50,9 @@ namespace Avitaminose
 					case Opcode.PRINT:
 						Print();
 						break;
+					case Opcode.PRINTLN:
+						Println();
+						break;
 					case Opcode.AND:
 						And();
 						break;

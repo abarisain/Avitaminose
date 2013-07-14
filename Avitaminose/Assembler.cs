@@ -51,6 +51,15 @@ namespace Avitaminose
 
 			// Now we're sure it's a line we are going to parse and add
 			_currentLineNumber++;
+
+			// Strip anything that is after a ;
+			// Note : this makes you unable to have ; in your strings.
+			// This will be fixed later
+			int commentIndex = line.IndexOf(';');
+			if (commentIndex > 0)
+			{
+				line = line.Substring(0, commentIndex).Trim();
+			}
 			
 			// If there is no space, it's either a label or a no-arg instruction
 			if (!line.Contains(' '))

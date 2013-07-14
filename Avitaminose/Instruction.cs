@@ -63,6 +63,7 @@ namespace Avitaminose
 		MUL,
 		DIV,
 		PRINT,
+		PRINTLN,
 		AND,
 		OR,
 		XOR,
