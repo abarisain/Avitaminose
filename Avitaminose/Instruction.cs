@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Avitaminose
 {
-	class Instruction
+	public class Instruction
 	{
 		public Opcode Opcode { get; set; }
 
@@ -21,7 +21,7 @@ namespace Avitaminose
 		}
 	}
 
-	class ParametrizedInstruction : Instruction
+	public class ParametrizedInstruction : Instruction
 	{
 		public object Parameter { get; set; }
 
@@ -37,7 +37,7 @@ namespace Avitaminose
 		}
 	}
 
-	class LabelInstruction : Instruction
+	public class LabelInstruction : Instruction
 	{
 		public Label Label { get; set; }
 
@@ -53,7 +53,7 @@ namespace Avitaminose
 		}
 	}
 
-	enum Opcode
+	public enum Opcode
 	{
 		NOP,
 		PUSH,

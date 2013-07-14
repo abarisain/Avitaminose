@@ -7,7 +7,7 @@ using Avitaminose.Exceptions;
 
 namespace Avitaminose
 {
-	class CPU
+	public class CPU
 	{
 		private VirtualMachine _vm;
 		private Instruction _currentInstruction;

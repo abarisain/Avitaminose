@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avitaminose", "Avitaminose\Avitaminose.csproj", "{5E5BA878-A913-4381-A4F2-95B455AFA073}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvitaminoseCLI", "AvitaminoseCLI\AvitaminoseCLI.csproj", "{CBB82270-0610-4F6B-AB89-C5BA4AF70FDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvitaminoseGUI", "AvitaminoseGUI\AvitaminoseGUI.csproj", "{0F942CFD-AF82-46FA-8B1C-7B19F9773959}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{5E5BA878-A913-4381-A4F2-95B455AFA073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E5BA878-A913-4381-A4F2-95B455AFA073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E5BA878-A913-4381-A4F2-95B455AFA073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBB82270-0610-4F6B-AB89-C5BA4AF70FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBB82270-0610-4F6B-AB89-C5BA4AF70FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBB82270-0610-4F6B-AB89-C5BA4AF70FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBB82270-0610-4F6B-AB89-C5BA4AF70FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F942CFD-AF82-46FA-8B1C-7B19F9773959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F942CFD-AF82-46FA-8B1C-7B19F9773959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F942CFD-AF82-46FA-8B1C-7B19F9773959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F942CFD-AF82-46FA-8B1C-7B19F9773959}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Avitaminose
 {
-	class Label
+	public class Label
 	{
 		public string Name { get; internal set; }
 		public int Line { get; internal set; }
@@ -24,7 +24,7 @@ namespace Avitaminose
 		}
 	}
 
-	class Flow
+	public class Flow
 	{
 		public IList<Instruction> Instructions { get; internal set; }
 		public int Position { get; internal set; }

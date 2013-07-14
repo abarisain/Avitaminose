@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Avitaminose
 {
-	interface IBIOS
+	public interface IBIOS
 	{
 		void print(string output);
 		void println(string output);
 	}
 
-	class BasicBIOS : IBIOS
+	public class BasicBIOS : IBIOS
 	{
 		private StringBuilder _outputBuilder;
 

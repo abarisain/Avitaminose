@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Avitaminose
 {
-	class Assembler
+	public class Assembler
 	{
 		private Flow _flow;
 		private Dictionary<string, Label> _labels;

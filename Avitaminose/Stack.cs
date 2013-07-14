@@ -12,7 +12,7 @@ namespace Avitaminose
 	 * Represents the Virtual Machine's stack.
 	 * It is only responsible for pushing and poping variables and induces some typing
 	 */
-	class Stack
+	public class Stack
 	{
 
 		public Stack<Object> Content { get; private set; }

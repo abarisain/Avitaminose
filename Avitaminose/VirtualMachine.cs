@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Avitaminose
 {
-	class VirtualMachine
+	public class VirtualMachine
 	{
-		internal Stack Stack { get; set; }
-		internal CPU CPU { get; set; }
-		internal Flow Flow { get; set; }
-		internal IBIOS BIOS { get; set; }
+		public Stack Stack { get; internal set; }
+		public CPU CPU { get; internal set; }
+		public Flow Flow { get; internal set; }
+		public IBIOS BIOS { get; internal set; }
 
 		public VirtualMachine() : this(new BasicBIOS())
 		{		
