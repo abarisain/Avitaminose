@@ -39,17 +39,17 @@ namespace Avitaminose
 
 	class LabelInstruction : Instruction
 	{
-		public string Name { get; set; }
+		public Label Label { get; set; }
 
-		public LabelInstruction(String name)
+		public LabelInstruction(Label label)
 			: base(Opcode.NOP)
 		{
-			Name = name;
+			Label = label;
 		}
 
 		public override string ToString()
 		{
-			return Name + ":";
+			return Label.Name + ":";
 		}
 	}
 

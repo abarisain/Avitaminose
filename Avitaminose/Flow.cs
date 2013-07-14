@@ -11,6 +11,12 @@ namespace Avitaminose
 	{
 		public string Name { get; internal set; }
 		public int Line { get; internal set; }
+
+		public Label(string name, int line)
+		{
+			Name = name;
+			Line = line;
+		}
 	}
 
 	class Flow
@@ -35,8 +41,18 @@ namespace Avitaminose
 		public Flow(VirtualMachine targetVm)
 		{
 			_vm = targetVm;
+			Reset();
+		}
+
+		public void Reset()
+		{
 			Instructions = new List<Instruction>();
 			Position = -1;
+		}
+
+		public void Clear()
+		{
+			Instructions.Clear();
 		}
 
 		public bool CanStep()

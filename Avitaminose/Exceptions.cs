@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace Avitaminose.Exceptions
 {
-	class AssemblyParsingException : Exception
+	class AssemblerException : Exception
 	{
-		public AssemblyParsingException()
+		public AssemblerException()
 			: base()
 		{
 		}
 
-		public AssemblyParsingException(string message)
+		public AssemblerException(string message)
 			: base(message)
 		{
 		}
+	}
+
+	class UnknownAssemblerException : Exception
+	{
 	}
 
 	class EmptyStackException : Exception

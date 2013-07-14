@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assembler.cs" />
     <Compile Include="BIOS.cs" />
     <Compile Include="CPU.cs" />
     <Compile Include="Flow.cs" />

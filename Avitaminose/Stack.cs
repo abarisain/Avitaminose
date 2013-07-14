@@ -24,22 +24,6 @@ namespace Avitaminose
 
 		public void Push(object value)
 		{
-			/*Todo : move this in the assembler
-			 * if (value.Length < 1)
-			{
-				throw new AssemblyParsingException("Invalid push value");
-			}
-
-			// If the first char is ', then we have a string to parse, otherwise it's a number
-			if (value.First() == StringUtils.StringDelimiter)
-			{
-				Content.Push(StringUtils.ParseAssemblyString(value));
-			}
-			else
-			{
-				// TODO : Parse more format numbers (see vitamine bug 11)
-				Content.Push(int.Parse(value));
-			}*/
 			Content.Push(value);
 		}
 
