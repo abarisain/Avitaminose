@@ -31,5 +31,23 @@ namespace Avitaminose
 		{
 
 		}
+
+		private void runToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			VirtualMachine vm = new VirtualMachine();
+			Assembler assembler = new Assembler(vm.Flow);
+			foreach (string line in textBoxInput.Text.Split('\n'))
+			{
+				assembler.AddLineToFlow(assembler.AssembleLine(line));
+			}
+
+			var assembledPrg = new StringBuilder();
+			foreach (Instruction instruction in vm.Flow.Instructions)
+				assembledPrg.AppendLine(instruction.ToString());
+			textBoxAssembledProgram.Text = assembledPrg.ToString();
+
+			vm.CPU.Run();
+			textBoxOutput.Text = ((BasicBIOS)vm.BIOS).output;
+		}
 	}
 }
